@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Organizer.</title>
+</head>
+
+<body>
+
+    <div class="cointainer">
+        <button id="myBtn" class="addBook">Add Book</button>
+        <div class="interface">
+            <div class="topBar">
+                <a href="#" class="barText">Name</a>
+                <a href="#" class="barText">Author</a>
+                <a href="#" class="barText">Pages</a>
+                <a href="#" class="barText">Read</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>New Book</h2>
+            </div>
+            <div class="modal-body">
+                <form action="/action_page.php" class="form-container" id="book-form" method="post">
+                    <label for="title"><b>Book Title</b></label>
+                    <input type="text" placeholder="Enter Title" name="title" id="title" required>
+
+                    <label for="author"><b>Book Author</b></label>
+                    <input type="text" placeholder="Enter Author" name="author" id="author" required>
+
+                    <label for="pages"><b>Pages</b></label>
+                    <input type="text" placeholder="Enter Pages" name="pages" id="pages" required>
+
+                    <input type="checkbox" name="read" id="myCheck">Read<br>
+
+                    <div class="modal-footer">
+                        <button type="button" id="btnSave" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
