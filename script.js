@@ -13,31 +13,31 @@ document.getElementById("btnSave").addEventListener("click", e => {
   newCell.setAttribute("class", "cell");
   container.appendChild(newCell);
 
-  var btn = document.createElement("a");
-  btn.setAttribute("id", "cellText");
-  btn.innerHTML = book.title;
-  newCell.appendChild(btn);
+  var titleBtn = document.createElement("a");
+  titleBtn.setAttribute("id", "cellText");
+  titleBtn.innerHTML = book.title;
+  newCell.appendChild(titleBtn);
 
-  var btn1 = document.createElement("a");
-  btn1.setAttribute("id", "cellText");
-  btn1.innerHTML = book.author
-  newCell.appendChild(btn1);
+  var authorBtn = document.createElement("a");
+  authorBtn.setAttribute("id", "cellText");
+  authorBtn.innerHTML = book.author
+  newCell.appendChild(authorBtn);
 
-  var btn2 = document.createElement("a");
-  btn2.setAttribute("id", "cellText");
-  btn2.innerHTML = book.pages;
-  newCell.appendChild(btn2);
+  var pagesBtn = document.createElement("a");
+  pagesBtn.setAttribute("id", "cellText");
+  pagesBtn.innerHTML = book.pages;
+  newCell.appendChild(pagesBtn);
 
-  var btn3 = document.createElement("a");
-  btn3.setAttribute("id", "cellText");
+  var readBtn = document.createElement("a");
+  readBtn.setAttribute("id", "cellText");
   var checkBox = document.getElementById("myCheck");
   var text = document.getElementById("text");
   if (checkBox.checked == true) {
-    btn3.innerHTML = "yes";
+    readBtn.innerHTML = "yes";
   } else {
-    btn3.innerHTML = "no";
+    readBtn.innerHTML = "no";
   }
-  newCell.appendChild(btn3);
+  newCell.appendChild(readBtn);
 
 });
 
@@ -50,17 +50,17 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
-btn.onclick = function() {
+btn.onclick = function () {
   modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
