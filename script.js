@@ -41,6 +41,7 @@ function createBook() {
 
     var readBtn = document.createElement("a");
     readBtn.setAttribute("id", "cellText");
+    readBtn.setAttribute("class", "readBtn");
     if (checkBox.checked == true) {
       readBtn.innerHTML = "yes";
     } else {
@@ -54,6 +55,13 @@ function createBook() {
     newCell.appendChild(removeBtn);
     removeBtn.addEventListener('click', () => {
       newCell.parentNode.removeChild(newCell);
+    });
+    readBtn.addEventListener('click', () => {
+      if (readBtn.innerHTML == "yes") {
+        readBtn.innerHTML = "no";
+      } else if (readBtn.innerHTML == "no") {
+        readBtn.innerHTML = "yes";
+      }
     });
   });
 }
