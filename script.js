@@ -10,8 +10,6 @@ function Book(title, author, pages) {
     this.pages = save.pages.value
 }
 
-let myLibrary = [];
-
 function createBook() {
   document.getElementById("btnSave").addEventListener("click", e => {
     let userInput = new Book(title, author, pages);
@@ -30,9 +28,6 @@ function createBook() {
     authorBtn.setAttribute("id", "cellText");
     authorBtn.innerHTML = userInput.author;
     newCell.appendChild(authorBtn);
-
-    var someData = userInput.title;
-    localStorage.setItem('myDataKey', someData);
 
     var pagesBtn = document.createElement("a");
     pagesBtn.setAttribute("id", "cellText");
