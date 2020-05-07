@@ -1,45 +1,64 @@
-const container = document.querySelector(".interface");
+const interface = document.querySelector(".interface");
+const container = document.querySelector(".removeButton");
 const save = document.getElementById("book-form")
 
-document.getElementById("btnSave").addEventListener("click", e => {
-  event.preventDefault();
-  const book = {
-    title: save.title.value,
-    author: save.author.value,
-    pages: save.pages.value,
-  };
+var checkBox = document.getElementById("myCheck");
 
-  const newCell = document.createElement("div");
-  newCell.setAttribute("class", "cell");
-  container.appendChild(newCell);
+function Book(title, author, pages) {
+  this.title = save.title.value,
+    this.author = save.author.value,
+    this.pages = save.pages.value
+}
 
-  var titleBtn = document.createElement("a");
-  titleBtn.setAttribute("id", "cellText");
-  titleBtn.innerHTML = book.title;
-  newCell.appendChild(titleBtn);
+let myLibrary = [];
 
-  var authorBtn = document.createElement("a");
-  authorBtn.setAttribute("id", "cellText");
-  authorBtn.innerHTML = book.author
-  newCell.appendChild(authorBtn);
+function createBook() {
+  document.getElementById("btnSave").addEventListener("click", e => {
+    let userInput = new Book(title, author, pages);
+    const cont = document.createElement("div");
+    cont.setAttribute("class", "cont");
+    const newCell = document.createElement("div");
+    newCell.setAttribute("class", "cell");
+    interface.appendChild(newCell);
 
-  var pagesBtn = document.createElement("a");
-  pagesBtn.setAttribute("id", "cellText");
-  pagesBtn.innerHTML = book.pages;
-  newCell.appendChild(pagesBtn);
+    var titleBtn = document.createElement("a");
+    titleBtn.setAttribute("id", "cellText");
+    titleBtn.innerHTML = userInput.title;
+    newCell.appendChild(titleBtn);
 
-  var readBtn = document.createElement("a");
-  readBtn.setAttribute("id", "cellText");
-  var checkBox = document.getElementById("myCheck");
-  var text = document.getElementById("text");
-  if (checkBox.checked == true) {
-    readBtn.innerHTML = "yes";
-  } else {
-    readBtn.innerHTML = "no";
-  }
-  newCell.appendChild(readBtn);
+    var authorBtn = document.createElement("a");
+    authorBtn.setAttribute("id", "cellText");
+    authorBtn.innerHTML = userInput.author;
+    newCell.appendChild(authorBtn);
 
-});
+    var someData = userInput.title;
+    localStorage.setItem('myDataKey', someData);
+
+    var pagesBtn = document.createElement("a");
+    pagesBtn.setAttribute("id", "cellText");
+    pagesBtn.innerHTML = userInput.pages;
+    newCell.appendChild(pagesBtn);
+
+    var readBtn = document.createElement("a");
+    readBtn.setAttribute("id", "cellText");
+    if (checkBox.checked == true) {
+      readBtn.innerHTML = "yes";
+    } else {
+      readBtn.innerHTML = "no";
+    }
+    newCell.appendChild(readBtn);
+
+    var removeBtn = document.createElement("button");
+    removeBtn.setAttribute("class", "remove");
+    removeBtn.innerHTML = "x";
+    newCell.appendChild(removeBtn);
+    removeBtn.addEventListener('click', () => {
+      newCell.parentNode.removeChild(newCell);
+    });
+  });
+}
+
+createBook();
 
 var modal = document.getElementById("myModal");
 
