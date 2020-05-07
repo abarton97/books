@@ -12,7 +12,7 @@ body {
   width: 60%;
   border-radius: 295px 7px 290px 7px/7px 290px 7px 295px;
   border: 3px solid black;
-  overflow: scroll;
+  overflow: auto;
   margin-left: auto;
   margin-right: auto;
 }
@@ -24,7 +24,7 @@ body {
   background: #aaa;
   padding: 15px 0;
   height: 20px;
-  width: 100%;
+  width: 93%;
   border-style: none none solid none;
   text-align: center;
   font-weight: bold;
@@ -69,13 +69,8 @@ body {
   font-family: monospace;
 }
 
-.addBook:hover {
-  height: 50px;
-  width: 100px;
+.addBook:hover, #btnSave:hover, .remove:hover {
   background-color: lightgrey;
-  border-radius: 295px 7px 290px 7px/7px 290px 7px 295px;
-  border-style: solid;
-  border-color: black;
 }
 
 .cell {
@@ -202,7 +197,6 @@ body {
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
   color: white;
 }
 
@@ -256,4 +250,30 @@ body {
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   background-color: #ddd;
   outline: none;
+}
+
+.remove {
+  width: 100px;
+  height: 260%;
+  border-style: solid;
+  background-color: white;
+  border: none;
+  font-family: monospace;
+}
+
+#btnSave {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 200px;
+  background-color: white;
+  border-radius: 295px 7px 290px 7px/7px 290px 7px 295px;
+  border-style: solid;
+  border-color: black;
+  font-family: monospace;
 }
