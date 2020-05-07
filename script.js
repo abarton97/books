@@ -2,7 +2,7 @@ const interface = document.querySelector(".interface");
 const container = document.querySelector(".removeButton");
 const save = document.getElementById("book-form")
 
-var checkBox = document.getElementById("myCheck");
+let checkBox = document.getElementById("myCheck");
 
 function Book(title, author, pages) {
   this.title = save.title.value,
@@ -19,22 +19,22 @@ function createBook() {
     newCell.setAttribute("class", "cell");
     interface.appendChild(newCell);
 
-    var titleBtn = document.createElement("a");
+    let titleBtn = document.createElement("a");
     titleBtn.setAttribute("id", "cellText");
     titleBtn.innerHTML = userInput.title;
     newCell.appendChild(titleBtn);
 
-    var authorBtn = document.createElement("a");
+    let authorBtn = document.createElement("a");
     authorBtn.setAttribute("id", "cellText");
     authorBtn.innerHTML = userInput.author;
     newCell.appendChild(authorBtn);
 
-    var pagesBtn = document.createElement("a");
+    let pagesBtn = document.createElement("a");
     pagesBtn.setAttribute("id", "cellText");
     pagesBtn.innerHTML = userInput.pages;
     newCell.appendChild(pagesBtn);
 
-    var readBtn = document.createElement("a");
+    let readBtn = document.createElement("a");
     readBtn.setAttribute("id", "cellText");
     readBtn.setAttribute("class", "readBtn");
     if (checkBox.checked == true) {
@@ -44,7 +44,7 @@ function createBook() {
     }
     newCell.appendChild(readBtn);
 
-    var removeBtn = document.createElement("button");
+    let removeBtn = document.createElement("button");
     removeBtn.setAttribute("class", "remove");
     removeBtn.innerHTML = "x";
     newCell.appendChild(removeBtn);
@@ -63,13 +63,13 @@ function createBook() {
 
 createBook();
 
-var modal = document.getElementById("myModal");
+let modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+let btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
 btn.onclick = function () {
